@@ -3,6 +3,7 @@ import React from 'react'
 import Apps from './Apps'
 import { Routes, Route } from 'react-router-dom'
 import ShowCase from './ShowCase'
+import Details from './Details'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/showCase" element={<ShowCase />} />
         {/* Agar Apps ek component hai jo har page pe chahiye, to isko Route ke bahar rakh sakte ho */}
         <Route path="/" element={<Apps />} />
+        <Route path="/details" element={<Details />} />
       </Routes>
     </>
   )

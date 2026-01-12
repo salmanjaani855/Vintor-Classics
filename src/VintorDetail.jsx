@@ -36,14 +36,14 @@ export default function VintorDetail({ setOpenVintor }) {
             onClick={() => setOpenVintor(false)}
             className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-200 rounded-full transition-colors"
           >
-            <X className="w-6 h-6 text-gray-700" />
+            <X className="w-6 h-6 text-gray-700 cursor-pointers" />
           </button>
         </div>
       </div>
      
 
       {/* Map Section */}
-      <div className="relative h-[500px] bg-gray-200">
+      <div className="relative h-[500px] bg-[#ede7e1]">
     <iframe className="absolute top-0 left-0 w-full h-full"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.7348798801772!2d16.35163787672688!3d48.211722345995994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07956d1df595%3A0x6463d8612555dd77!2sWickenburggasse%201%2C%201080%20Wien!5e0!3m2!1sen!2sat!4v1750836942491!5m2!1sen!2sat"
        allowfullscreen="" aria-hidden="false">
@@ -62,9 +62,9 @@ export default function VintorDetail({ setOpenVintor }) {
       </div>
 
       {/* Details */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl bg-[#ede7e1] mx-auto px-4 py-12">
        
-        <h1>great work</h1>
+     
         <h2 className="text-2xl tracking-widest text-gray-800 font-light mb-2">
           VINTOR CLASSICS
         </h2>
@@ -72,23 +72,23 @@ export default function VintorDetail({ setOpenVintor }) {
           Dubai, United Arab Emirates
         </p>
 
-        <div className="space-y-4 max-w-5xl pl-30">
+        <div className="space-y-4 max-w-17sxl pl-2">
           <button
             onClick={handleCallBack}
-            className="w-full py-4 cursor-pointer bg-white border-2 border-gray-300 text-gray-700 tracking-widest text-sm hover:bg-gray-50 transition-colors"
+            className="w-full py-4 cursor-pointer  text-gray-700 tracking-widest text-sm hover:bg-gray-50 transition-colors"
           >
             REQUEST CALL BACK
           </button>
 
           <button
             onClick={handleWhatsAppClick}
-            className="w-full justify-center items-center cursor-pointer py-4 bg-red-900 text-white tracking-widest text-sm hover:bg-red-800 transition-colors"
+            className="w-300 justify-center items-center cursor-pointer py-4 bg-red-900 text-white tracking-widest text-sm hover:bg-red-800 transition-colors"
           >
             REACH US ON WHATSAPP
           </button>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-8 text-sm text-gray-600">
+        {/* <div className="mt-16 grid md:grid-cols-2 gap-8 text-sm text-gray-600">
           <div>
             <h3 className="text-lg tracking-wide text-gray-800 mb-3 font-light">
               ABOUT
@@ -109,9 +109,9 @@ export default function VintorDetail({ setOpenVintor }) {
               Get in touch via WhatsApp or request a call back.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
-      
+  
     </div>
   );
 }

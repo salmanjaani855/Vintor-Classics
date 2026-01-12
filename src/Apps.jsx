@@ -19,9 +19,12 @@ const carsData = [
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     mainImage: 'https://framerusercontent.com/images/gaoj4NspYFqVNU25rG52Sk6QFw.png?scale-down-to=1024',
     images: [
-      'https://framerusercontent.com/images/MmGlLEEwxDn4xtllX1Dg6zw.png?scale-down-to=512',
-      'https://framerusercontent.com/images/KGqw7ExjRDFTLZHTLKy0Yc8JTY.png',
-      'https://framerusercontent.com/images/GXApXposDafO6CmA1eavWIYrnc.png'
+     
+
+      'https://framerusercontent.com/images/gaoj4NspYFqVNU25rG52Sk6QFw.png?scale-down-to=1024',
+ 'https://framerusercontent.com/images/MmGlLEEwxDn4xtllX1Dg6zw.png?scale-down-to=512',
+      'https://framerusercontent.com/images/GXApXposDafO6CmA1eavWIYrnc.png',
+      'https://framerusercontent.com/images/KGqw7ExjRDFTLZHTLKy0Yc8JTY.png?scale-down-to=512',
     ],
     description: 'The 1967 Ford Mustang represents the pinnacle of American muscle car design. This iconic pony car features a powerful V8 engine, sleek fastback styling, and classic chrome accents that defined an era.',
     specs: {
@@ -130,7 +133,9 @@ const Navbar = () => {
 
 
  {/* Icons */}
+
       <div className="flex gap-4">
+         <Link to={'/details'}>
         <button
           onClick={() => setOpenForm(true)}
           className="p-2 hover:bg-blue-600 cursor-pointer hover:bg-opacity-10 rounded-full transition"
@@ -145,7 +150,9 @@ const Navbar = () => {
 </svg>
 
         </button>
+ </Link>
           
+     
       <button
         onClick={() => setOpenVintor(true)}
         className="p-2 hover:bg-blue-600 cursor-pointer text-[#e4d7c2] hover:bg-opacity-10 rounded-full transition"
@@ -158,106 +165,9 @@ const Navbar = () => {
         <VintorDetail setOpenVintor={setOpenVintor} />
       )}
       </div>
+     
 
-      {/* Popup Form */}
-      {openForm && (
-<div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
-  <div className="min-h-screen  py-6 flex flex-col justify-center sm:py-12">
-    <div className="relative py-3 sm:max-w-xl sm:mx-auto">
 
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-
-      <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-
-        {/* Close Button */}
-        <button
-          onClick={() => setOpenForm(false)}
-          className="absolute top-4 right-4 text-gray-400 hover:text-black"
-        >
-          ✕
-        </button>
-
-        <div className="max-w-md mx-auto">
-          <div>
-            <h1 className="text-2xl font-semibold">Login</h1>
-          </div>
-
-          <div className="divide-y divide-gray-200">
-            <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-
-              <div className="relative">
-                <input
-                  autoComplete="off"
-                  id="email"
-                  name="email"
-                  type="text"
-                  className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none"
-                  placeholder="Email address"
-                />
-                <label
-                  htmlFor="email"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm
-                  peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
-                  peer-placeholder-shown:top-2 transition-all
-                  peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Email Address
-                </label>
-              </div>
-
-              <div className="relative">
-                <input
-                  autoComplete="off"
-                  id="password"
-                  name="password"
-                  type="password"
-                  className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none"
-                  placeholder="Password"
-                />
-                <label
-                  htmlFor="password"
-                  className="absolute left-0 -top-3.5 text-gray-600 text-sm
-                  peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
-                  peer-placeholder-shown:top-2 transition-all
-                  peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
-                >
-                  Password
-                </label>
-              </div>
-
-              <div className="relative">
-                <button className="bg-cyan-500 text-white rounded-md px-4 py-1">
-                  Submit
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        {/* Google Button */}
-        <div className="w-full flex justify-center">
-          <button className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200">
-            <svg
-              className="h-6 w-6 mr-2"
-              viewBox="-0.5 0 48 48"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path fill="#FBBC05" d="M9.827 24c0-1.524.253-2.986.705-4.356L2.623 13.604A23.9 23.9 0 0 0 .214 24c0 3.736.867 7.26 2.62 10.388l7.905-6.05A14.9 14.9 0 0 1 9.827 24z"/>
-              <path fill="#EB4335" d="M23.714 10.133c3.311 0 6.302 1.174 8.652 3.094l6.836-6.827C35.036 2.773 29.695.533 23.714.533c-9.287 0-17.268 5.311-21.09 13.07l7.909 6.04c1.823-5.532 7.017-9.51 13.18-9.51z"/>
-              <path fill="#34A853" d="M23.714 37.867c-6.165 0-11.36-3.979-13.182-9.51l-7.909 6.038c3.822 7.761 11.803 13.071 21.09 13.071 5.732 0 11.204-2.035 15.311-5.848l-7.507-5.804c-2.118 1.334-4.785 2.053-7.803 2.053z"/>
-              <path fill="#4285F4" d="M46.145 24c0-1.387-.214-2.88-.534-4.267H23.714V28.8h12.604c-.63 3.091-2.345 5.468-4.8 7.014l7.507 5.804C43.34 37.614 46.145 31.65 46.145 24z"/>
-            </svg>
-            <span>Continue with Google</span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-      )}
     </nav>
   );
 };
@@ -311,7 +221,7 @@ const CarGallery = ({ cars, currentIndex, onPrevious, onNext, onCarClick, onImag
   {/* Previous Button */}
   <button
     onClick={onPrevious}
-    className="fixed left-4 mt-50 top-1/2 -translate-y-1/2 z-40 p-4 hover:bg-white hover:text-red-500 hover:bg-opacity-10 rounded-full transition"
+    className="fixed left-4 mt-50 top-1/2 -translate-y-1/2 z-40 p-4 cursor-pointer hover:bg-white hover:text-blue-500 hover:bg-opacity-10 rounded-full transition"
   >
     <ChevronLeft size={32} />
   </button>
@@ -319,19 +229,43 @@ const CarGallery = ({ cars, currentIndex, onPrevious, onNext, onCarClick, onImag
   {/* Next Button */}
   <button
     onClick={onNext}
-    className="fixed right-4 mt-50 top-1/2 -translate-y-1/2 z-40 p-4 hover:bg-white hover:text-red-600 hover:bg-opacity-10 rounded-full transition"
+    className="fixed right-4 cursor-pointer mt-50 top-1/2 -translate-y-1/2 z-40 p-4 hover:bg-white hover:text-blue-600 hover:bg-opacity-10 rounded-full transition"
   >
     <ChevronRight size={32} />
   </button>
 
   {/* Side Text */}
   <Link to={'/showCase'}>
-  <div className="fixed top-1/2 -translate-y-1/2 z-30 -rotate-90 text-[#e4d7c2]">
-    <button className="text-lg tracking-widest opacity-70 hover:opacity-100 transition flex items-center gap-2">
-      Our Collection
-    </button>
-    <ChevronRight size={20} className="rotate-90 relative -right-12" />
-  </div>
+<div
+      className="
+        fixed
+        top-1/2
+        left-5
+        -translate-y-1/2
+        -rotate-90
+        origin-left
+        z-30
+        text-[#e4d7c2]
+      "
+    >
+      <button
+        className="
+          flex
+          items-center
+          gap-2
+          text-lg
+          tracking-widest
+          cursor-pointer
+          opacity-70
+          hover:opacity-100
+          transition
+          fot
+        "
+      >
+        Our Collection
+        <ChevronRight size={20} className="rotate-90" />
+      </button>
+    </div>
   </Link>
 
   {/* Main Content */}
@@ -343,13 +277,13 @@ const CarGallery = ({ cars, currentIndex, onPrevious, onNext, onCarClick, onImag
         <img
           src={currentCar.mainImage}
           alt={`${currentCar.brand} ${currentCar.model}`}
-          className="w-[550px] pt-80 pr-20 h-auto drop-shadow-2xl cursor-pointer hover:scale-115 transition-transform duration-500"
+          className="w-[550px] pt-90 pr-20 h-auto drop-shadow-2xl cursor-gra hover:scale-115 cursor-grab transition-transform duration-500"
           onClick={onImageClick}
         />
       </div>
 
       {/* Text Section */}
-      <div className="data absolute pt-30 right-20 top-1/2 -translate-y-1/2 text-right">
+      <div className="data absolute pt-30 right-10 top-1/2 -translate-y-1/2 text-right">
         <div className="text-xl tracking-widest opacity-80 mb-2 text-[#e4d7c2]">
           {currentCar.brand}
         </div>
@@ -399,75 +333,84 @@ const CarGallery = ({ cars, currentIndex, onPrevious, onNext, onCarClick, onImag
 // Car Details Component
 const CarDetails = ({ car, onBack }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-950 via-red-900 to-red-800 text-white overflow-hidden">
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 bg-black bg-opacity-30 backdrop-blur-sm">
-        <div className="flex items-center gap-2">
-          <div className="text-2xl font-light tracking-widest">VINTOR</div>
-          <div className="text-xs tracking-wider opacity-70">CLASSICS</div>
-        </div>
-        <div className="flex gap-4">
-          <button className="p-2 hover:bg-white hover:bg-opacity-10 rounded-full transition">
-            <User size={24} />
-          </button>
-          <button className="p-2 hover:bg-white hover:bg-opacity-10 rounded-full transition">
-            <Phone size={24} />
-          </button>
-        </div>
-      </nav>
-
-      <button
-        onClick={onBack}
-        className="fixed top-24 left-6 z-50 px-6 py-2 cursor-pointer text-2xl bg-opacity-20 hover:bg-opacity-30 rounded-full backdrop-blur-sm transition"
-      >
-        ← Back to Collection
-      </button>
-
-      <div className="pt-32 pb-16 px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="text-xl tracking-widest opacity-80 mb-2">{car.brand}</div>
-          <h1 className="text-7xl font-light tracking-wider mb-4">{car.model}</h1>
-          <div className="text-6xl font-light opacity-40">{car.year}</div>
-        </div>
-
-        <div className="bg-black bg-opacity-30 backdrop-blur-md rounded-3xl p-8 mb-8">
-          <img
-            src={car.mainImage}
-            alt={`${car.brand} ${car.model}`}
-            className="w-full h-96 object-cover rounded-2xl mb-6"
-          />
-          
-          <div className="grid grid-cols-3 gap-4 mb-8">
-            {car.images.map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt={`${car.model} angle ${idx + 1}`}
-                className="w-full h-48 object-cover rounded-xl hover:scale-105 transition cursor-pointer"
-              />
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 bg-gradient-to-br from-red-950 via-red-900 to-red-800">
-            <div>
-              <h2 className="text-3xl font-light mb-4 tracking-wide">About This Classic</h2>
-              <p className="text-lg leading-relaxed opacity-90">{car.description}</p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-light mb-4 tracking-wide">Specifications</h2>
-              <div className="space-y-4">
-                {Object.entries(car.specs).map(([key, value]) => (
-                  <div key={key} className="flex justify-between items-center border-b border-white border-opacity-20 pb-3">
-                    <span className="text-lg capitalize opacity-70">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                    <span className="text-xl font-light">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div className="min-h-screen bg-white overflow-hidden">
+  {/* NAVBAR */}
+  <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6">
+    
+    <div>
+      <div className="text-2xl tracking-widest text-black">VINTOR</div>
+      <div className="text-xs tracking-wider text-gray-500">CLASSICS</div>
     </div>
+
+    {/* <div className="flex gap-4 text-black">
+      <button className="p-2 hover:opacity-60 transition">
+        <User size={22} />
+      </button>
+      <button className="p-2 hover:opacity-60 transition">
+        <Phone size={22} />
+      </button>
+    </div> */}
+  </nav>
+
+  {/* BACK BUTTON */}
+  <button
+    onClick={onBack}
+    className="fixed cursor-pointer top-28 left-10 z-40 text-black text-lg hover:opacity-60"
+  >
+    ← Back to Collection
+  </button>
+
+  {/* MAIN CONTENT */}
+  <div className="pt-40 max-w-7xl mx-auto px-10">
+    {/* MAIN IMAGE */}
+    <div className="flex justify-center mb-10">
+      <img
+        src={car.mainImage}
+        alt={car.model}
+        className="max-h-[420px] object-contain"
+      />
+    </div>
+
+    {/* THUMBNAILS */}
+    <div className="flex justify-center gap-4 mb-20">
+      {car.images.map((img, idx) => (
+        <img
+          key={idx}
+          src={img}
+          alt=""
+          className="w-40 h-24 object-cover cursor-pointer hover:scale-105 transition"
+        />
+      ))}
+    </div>
+
+    {/* TEXT SECTION */}
+    <div className="max-w-4xl text-[#6b0f0f]">
+      <h1 className="text-5xl tracking-wider text-[#6b0f0f] mb-4 fot">
+        {car.brand.toUpperCase()} {car.model.toUpperCase()} {car.year}
+      </h1>
+
+      <h2 className="text-2xl  tracking-widest text-[#6b0f0f] mb-2">
+        DETAILS:
+      </h2>
+
+      <p className=" leading-relaxed text-[#6b0f0f]">
+        {car.description}
+      </p>
+    </div>
+  </div>
+
+  {/* FOOTER */}
+  <footer className="mt-32 px-10 py-6 flex justify-between text-sm border-t">
+    <div className="flex gap-6">
+      <span>FAQ</span>
+      <span>POLICY</span>
+      <span>SELL YOUR CAR</span>
+      <span>CONTACT</span>
+    </div>
+    <div>© 2026 Vintor Classics</div>
+  </footer>
+</div>
+
   );
 };
 
@@ -512,8 +455,8 @@ const Apps = () => {
   return (
     <>
       {showDetails && selectedCar ? (
-        <CarDetails car={selectedCar} onBack={handleBackToGallery}  />
-      ) : (
+        <CarDetails  car={selectedCar} onBack={handleBackToGallery}  />
+      ) : (    
         <>
           <CarGallery
             cars={carsData}
@@ -529,7 +472,7 @@ const Apps = () => {
           {showVideo && (
             <VideoModal
               videoUrl={carsData[currentIndex].videoUrl}
-              onClose={handleCloseVideo}
+              onClose={handleCloseVideo}   
             
             />
           )}
